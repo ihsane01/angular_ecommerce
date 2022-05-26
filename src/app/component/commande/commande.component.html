@@ -1,0 +1,69 @@
+
+<br>
+<br>
+<br>
+
+<div class ="container">
+<div style="text-align:center;">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Ordre</th>
+        <th scope="col">Date</th>
+        <th scope="col">id_client</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Etat</th>
+        <th scope="col">article</th>
+        <th scope="col">Total </th>
+        <th scope="col">action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandes" >
+        <th scope="row">{{commande.id}}</th>
+        <td>{{commande.created_at}}</td>
+        <th scope="row">{{commande.id_client}}</th>
+        <td>{{commande.destination}}</td>
+        <td>{{commande.etat}}</td>
+        <td>{{commande.total}}</td>
+ 
+        <td><button type="button" (click)="onedit(commande)" data-bs-toggle="modal" data-bs-target="#commande" class="btn btn-dark" >Edit</button>
+        </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  
+ 
+  <div>
+<!-- Modal -->
+<div class="modal fade" id="commande"   tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mes commandes</h5>
+          <button type="button" id="cancel" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> 
+        <div class="modal-body">
+  
+            <form [formGroup]="myForm ">
+             
+    
+            
+                <div class="mb-3">
+                    <label for="commande">Etat de commande</label>
+                    <select  formControlName="etat" id="etat"    class="form-select"  required>
+                      <option value="">--Please choose an option--</option>
+                      <option  value="1">Success</option>
+                      <option  value="0">Not Yet</option>
+                   
+                  </select>
+                  </div>
+                  <button [disabled]="myForm.invalid"  (click)="onupdate()" style="margin: top 200px;" class="btn btn-dark" >update</button> 
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

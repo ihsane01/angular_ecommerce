@@ -1,0 +1,91 @@
+.product-details{
+    margin-top: 80px;
+}
+
+.product-details .col-4 img{
+    padding: 0;
+}
+
+.product-details h4{
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+.product-details input{
+    width: 50px;
+    height: 40px;
+    padding-left: 20px;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* border: 1px solid #ff523b; */
+}
+
+input:focus{
+    outline: none;
+}
+
+.ajouteAuPanier{
+    display: inline-block;
+    background: #9e9e9e;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border: #9e9e9e;
+    border-radius: 30px;
+    width: 300px;
+}
+
+#cat{
+    color:  #9e9e9e;
+}
+
+.product-details .col-3{
+    margin-left: 50px;
+}
+
+.col-4 table{
+    height: 100px;
+}
+
+.line {
+    position: relative;
+}
+.line:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-right: 1px solid #cfc7c0;
+    top: 10%;
+    bottom: 10%;
+}
+
+form {
+    flex: 0 0 100%;
+}
+
+.form-control{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(211, 229, 228);
+    background: none;
+    outline: none;
+    padding: 10px 5px;
+    margin-left: 50px;
+}
+
+.Formbtn{
+    border: 1px solid transparent;
+    padding: 0.5rem 1.5rem;
+    background-color: rgb(215, 213, 213);
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 1rem;
+    transition: transform .3s, box-shadow .3s;
+
+}
+
+.Formbtn:hover{
+    box-shadow: 3px 5px 115px rgb(211, 229, 228);
+    transform: translate(-5px);
+}

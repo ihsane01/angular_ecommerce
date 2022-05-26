@@ -1,0 +1,20 @@
+
+    <header>
+      
+        
+            <ul>
+              
+        <li *ngFor="let categorie of categories"  >
+
+            <a routerLink='/category/{{categorie.id}}' routerLinkActive='active' >
+                {{categorie.nom}}</a>
+         
+        </li>
+        <li>
+            <a routerLink='/All' routerLinkActive='active' >
+                All </a>
+        </li>
+
+    </ul>
+
+</header>

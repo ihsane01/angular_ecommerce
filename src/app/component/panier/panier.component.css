@@ -1,0 +1,81 @@
+#cart-container table{
+border-collapse: collapse;
+width: 100%;
+table-layout: fixed;
+white-space: nowrap;
+
+}
+#cart-container{
+    overflow-x: auto;
+}
+#cart-container table thead{
+    font-weight: 700;
+
+}
+#cart-container table thead td {
+    background-color: rgb(49, 48, 48);
+    color:  white;
+    padding: 6px 0;
+}
+#cart-container table td {
+    border: 1px solid #b6b6b6;
+    text-align: center;
+
+}
+#cart-container table td:nth-child(1){
+    width: 100%;
+    
+}
+#cart-container table td:nth-child(3),
+#cart-container table td:nth-child(2){
+    width: 200%;
+
+}
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6){
+    width: 170px;
+
+}
+#cart-container table  tbody img{
+    width: 40%;
+    height: 60px;
+    object-fit: cover;
+
+}
+#cart-botttom .total>div{
+    border: 1px solid #b6b6b6;}
+
+#cart-botttom .total h5{
+    background: rgb(49, 48, 48);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-weight: 700;
+}
+#cart-botttom .total div>div{
+    padding: 0 12px;
+}
+#cart-botttom .total h6{
+    color: black;
+
+}
+.second-hr{
+    background-color: #b6b6b6;
+    width: 100%;
+    height: 1px;
+
+}
+#cart-bottom .total div>button{
+    margin: 0 12px 20px 0;
+    display: flex;
+    justify-self: flex-end;
+}
+
+
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+
+}

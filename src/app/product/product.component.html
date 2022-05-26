@@ -1,0 +1,68 @@
+<br><br><br><br><br>
+<div class="container">
+
+    <div class="row">
+        <div class="col-8">
+            <div  >
+                <img  style="width: 500px; height: 500px;" src="assets/images/{{product.image}}" alt="{{product.nom}}">
+                
+            </div>
+   
+        </div>
+        <div class="col-4">
+            <h3 style="margin-bottom:10px ; font-family: 'Advent Pro', sans-serif;"><strong>{{product.nom}}</strong></h3>
+            <p><strong>{{product.prix}} DH</strong></p>
+            <p>{{product.description}} </p>
+            <div >
+               <strong >Quantité</strong>
+                
+                <input type="number" value="1" [formControl]="quantite"style="width: 50px; margin-left: 10px;"> 
+                    
+                   
+            </div>
+            <br>
+            <button (click)="_addItemToCart(product.id)" routerlinkActive="active"style="border:0px;background-color:white"> <img  width="30" src="assets/images/bag.svg" alt="">
+            </button>
+            <button (click)="toggleLike(product.id)" style="border:0px;background-color:white;"> 
+                <span *ngIf="isLiked != null">
+                <img *ngIf="!isLiked" width="25" style="margin: top 0; " src="assets/images/heart.svg" alt="">
+                <img *ngIf="isLiked" width="25" src="assets/images/heart-fill.svg" alt="">
+                </span>
+            </button>
+
+            <table  style="margin-top:20px; margin-left:px ;" class="table">
+
+           
+                         <p ><strong>Commentaires</strong></p>
+                 
+                
+              
+                <tbody>
+                    <tr *ngFor="let commentaire of data1">
+                        <td  ><mat-icon>account_circle</mat-icon></td>
+                        <td >{{commentaire.nom}}</td>
+                        <td>{{commentaire.commentaire}}</td>
+                    
+                    </tr>
+                </tbody>
+        
+            </table>
+        
+        
+      
+     
+        <input style="margin-left:0px;" class="form-control"  type="text" placeholder="Votre commentaire..." [formControl]="commentaire"> 
+        <button class="Formbtn" (click)="addComment(product.id)"  routerlinkActive="active"  type="submit">
+            Save
+        </button>
+        
+        </div>
+        </div>
+            </div>
+
+     
+    
+
+
+
+

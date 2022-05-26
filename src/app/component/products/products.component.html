@@ -1,0 +1,99 @@
+<div class ="container">
+  <app-navadmin></app-navadmin>
+<br><br><br>
+
+<div style="text-align:center;">
+  <button (click)="clickaddproduct()" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#pro">Add New</button>
+</div>
+  <br>
+  <table style="margin-left: 50px ;margin-right: 20;" class="table">
+      <thead class="thead-dark">
+          <tr>
+              <th scope="col"> #</th>
+              <th scope="col"> nom</th>
+              <th scope="col"> Description </th>
+              <th scope="col"> Quantité</th>
+              <th scope="col"> Prix</th>
+              <th scope="col"> image</th>
+              <th scope="col"> categorie</th>
+              <th scope="col"> action</th>
+              <th scope="col"> action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let prod of products;index as i ">
+              <th scope="row"> {{i+1}}</th>
+              <td> {{prod.nom}}</td>
+              <td> {{prod.description}}</td>
+              <td> {{prod.quantite}}</td>
+              <td> {{prod.prix}}</td>
+              <!-- <td>     <img style="width: 90px; height: 70px;"src="assets/images/iphone7.jpg" alt=""></td> -->
+              <td>     <img src="assets/images/{{prod.image}}" height="100px" > </td>
+
+              <td> {{prod.id_cat}}</td>
+              <td><button type="button" (click)="onedit(prod)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" >Edit</button>
+               <td><button type="button" class="btn btn-dark" (click)="delete(prod.id)">Delete</button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="pro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" id="cancel" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> 
+      <div class="modal-body">
+
+          <form [formGroup]="myForm">
+            <div class="mb-3">
+              <label for="nom" class="form-label"> nom</label>
+              <input   formControlName="nom" id="nom"  type="text" class="form-control">
+              <!-- <small *ngIf="nom.errors?.['required'] && showError" ><b>*image is required</b></small> -->
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label"> image</label>
+            <input type="file"  name="myFile" formControlName="file"  id="file"   type="file"   class="form-control" (change)="fileEvent($event)"/>
+            </div>
+  
+            <div class="mb-3">
+              <label for="Description" class="form-label"> Description</label>
+              <input   formControlName="description" id="description"  type="text" class="form-control">
+              <!-- <small *ngIf="nom.errors?.['required'] && showError" ><b>*Description is required</b></small> -->
+            </div>
+            <div class="mb-3">
+              <label for="Quantité" class="form-label"> Quantité</label>
+              <input   formControlName="quantite" id="quantite"  type="text" class="form-control">
+              <!-- <small *ngIf="nom.errors?.['required'] && showError" ><b>*Quantité is required</b></small> -->
+            </div>
+            <div class="mb-3">
+              <label for="prix" class="form-label"> prix</label>
+              <input   formControlName="prix" id="prix"  type="text" class="form-control">
+              <!-- <small *ngIf="nom.errors?.['required'] && showError" ><b>*Prix is required</b></small> -->
+            </div>
+  
+  
+          
+            
+            <div class="mb-3">
+            <label for="category">Filtre par categorie</label>
+            <select  formControlName="id_cat" id="id_cat"    class="form-select"  required>
+              <option value="">--Please choose an option--</option>
+              <option *ngFor="let cat of categorie"  value="{{cat.id}}">{{cat.nom}}</option>
+           
+          </select>
+          </div>
+           
+          <button [disabled]="myForm.invalid" *ngIf="showAdd" (click)="onSubmit()" style="margin: top 200px;" class="btn btn-primary" >add</button> 
+          <button [disabled]="myForm.invalid"  *ngIf="showUpdate" (click)="onupdate()" style="margin: top 200px;" class="btn btn-primary" >update</button> 
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
